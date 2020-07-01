@@ -1,36 +1,9 @@
-#include <iostream>
-#include<string>
-using namespace std;
 struct ListNode {
       int val;
       ListNode *next;
       ListNode(int x) : val(x), next(NULL) {}
 };
-
-void deleteNode(ListNode* node) {
-       ListNode *p=node.next,*q=p.next;
-       //pre是断链后端头插法节点
-
-       ListNode *pre;
-       //进行断链
-       p.next=NULL;
-       //进行替换
-       p=r;
-       while(p!=NULL){
-        r=p.next;
-        pre=node;
-        while(pre.next!=null&&pre.next.val<p.val){
-            pre=pre.next;
-        }
-        p.next=pre.next;
-        pre.next=p;
-        p=r;
-        //进行下一轮
-       }
-
-
-    }
- void reorderList(ListNode* head) {
+void reorderList(ListNode* head) {
         ListNode* p=head,*q=head,*r,*s=head;
         if(!head)            //head为空，则直接退出
             return ;
@@ -49,7 +22,7 @@ void deleteNode(ListNode* node) {
             q=r;
         }
         q=p->next;            //q指向后半段的第一个数据结点
-        p->next=nullptr;
+        p->next=nullptr;      //必须断链，否则形成环，一直运行
         while(q){             //将链表后半段的结点插入到指定位置
             r=q->next;        //r指向后半段的下一个结点
             q->next=s->next;  //将q所指结点插入到s所指结点（head结点）之后
@@ -58,15 +31,3 @@ void deleteNode(ListNode* node) {
             q=r;
         }
     }
-
-
-{
-    int a,b;
-    cin>>a>>b;
-    int c=a+b;
-
-    if(c<0){
-        for(int i=1;i<)
-    }
-    return 0;
-}
